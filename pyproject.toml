@@ -1,15 +1,15 @@
-[tool.poetry]
+[project]
 name = "using-cognite-python-sdk"
 version = "0.1.0"
 description = ""
-authors = ["Cognite <academy@cognite.com>"]
-package-mode = false
+authors = [
+    { name = "Cognite", email = "academy@cognite.com" }
+]
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "cognite-sdk[pandas]>=8.0.0rc1,<9.0.0",
+    "notebook>=7.5.3,<8.0.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-cognite-sdk = {extras = ["pandas"], version = "^8.0.0rc1", allow-prereleases = true}
-notebook = "^7.5.3"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.uv]
+package = false
